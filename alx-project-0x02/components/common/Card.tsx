@@ -1,5 +1,5 @@
-
-function Card({ title, description, content }: { title: string, description?: string, content?: string }) {
+import { CardProps } from "@/interfaces"
+function Card({ title, description, content }: CardProps) {
     return (
 
 
