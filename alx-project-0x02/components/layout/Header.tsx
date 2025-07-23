@@ -8,7 +8,7 @@ function Header() {
         router.pathname === href ? 'text-blue-600 font-semibold shadow-md bg-white' : 'text-gray-300 hover:text-blue-600 hover:shadow-md hover:bg-white rounded';
 
     const linksArray: NavLink[] = [
-        { name: 'Home', href: '/' },
+        { name: 'Home', href: '/home' },
         { name: 'Properties', href: '/properties' },
         { name: 'About', href: '/about' },
         { name: 'Contact us', href: '/contact' },
