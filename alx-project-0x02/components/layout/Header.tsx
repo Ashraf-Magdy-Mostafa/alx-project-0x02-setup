@@ -5,7 +5,7 @@ import { NavLink } from '@/interfaces';
 function Header() {
     const router = useRouter();
     const isActive = (href: string) =>
-        router.pathname === href ? 'text-blue-600 font-semibold ' : 'text-gray-300 hover:text-blue-600 hover:shadow-md px-4 py-2 hover:bg-white rounded';
+        router.pathname === href ? 'text-blue-600 font-semibold shadow-md bg-white' : 'text-gray-300 hover:text-blue-600 hover:shadow-md hover:bg-white rounded';
 
     const linksArray: NavLink[] = [
         { name: 'Home', href: '/' },
@@ -13,6 +13,7 @@ function Header() {
         { name: 'About', href: '/about' },
         { name: 'Contact us', href: '/contact' },
     ];
+
 
     return (
         <header className="bg-gray-900 shadow-md sticky top-0 z-50">
@@ -29,7 +30,7 @@ function Header() {
                             <li key={navItem.name}>
                                 <Link
                                     href={navItem.href}
-                                    className={`transition-colors duration-200 ${isActive(navItem.href)}`}
+                                    className={` px-4 py-2 rounded transition-colors duration-200 ${isActive(navItem.href)}`}
                                 >
                                     {navItem.name}
                                 </Link>
