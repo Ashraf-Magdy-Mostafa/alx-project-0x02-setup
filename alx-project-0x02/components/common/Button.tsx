@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonProps } from "@/interfaces";
+import { type ButtonProps } from "@/interfaces";
 function Button({ className, text, onClick, disabled, type, size = "medium", shape = "rounded-md" }: ButtonProps) {
     const ButtonSize = {
         small: "text-sm px-2 py-1",
