@@ -15,7 +15,7 @@ function PostModal({ isOpen, onSubmit }: { isOpen: boolean, onSubmit: (post: Pos
                 <input className="w-full px-4 mb-2 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" id="content" type="text" placeholder="Content" name="content" onChange={(e) => setContent(e.target.value)} required />
                 <button className="w-full py-2 px-4 mb-[-10] mt-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700  transition cursor-pointer" type="submit" onClick={(e) => {
                     e.preventDefault()
-                    onSubmit({ title, content })
+                    onSubmit({ title, body: content })
 
                 }}>Submit</button>
             </form>

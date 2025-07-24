@@ -2,24 +2,22 @@ import Header from "@/components/layout/Header"
 import { useEffect, useState } from "react"
 import { type PostProps } from '@/interfaces'
 import PostCard from "@/components/common/PostCard"
-function posts() {
-    const [posts, setPosts] = useState<PostProps[]>([])
-    useEffect(() => {
-        // Fetch posts from the API
-        const fetchPosts = async () => {
-            try {
-                const data = await fetch('https://jsonplaceholder.typicode.com/posts')
-                const posts = await data.json()
-                setPosts(posts.slice(0, 10))
+import { GetStaticProps } from "next"
 
-            }
-            catch (error) {
-                console.error("Error fetching posts:", error)
-            }
-
+export const getStaticProps: GetStaticProps<{ posts: PostProps[] }> = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const data = await res.json()
+    const partialData: PostProps[] = await data.slice(0, 10) //[{},{}]
+    return {
+        props: {
+            posts: partialData
         }
-        fetchPosts()
-    }, [])
+    }
+}
+
+export default function posts({ posts }: { posts: PostProps[] }) {
+    // const [posts, setPosts] = useState<PostProps[]>([])
+
 
     return (
         <>
@@ -28,12 +26,12 @@ function posts() {
                 <h1 className="text-2xl font-bold mb-6">Latest Posts</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        posts.map((post) => (
+                        posts.map((posts) => (
                             <PostCard
-                                key={post.id}
-                                title={post.title}
-                                body={post.body}
-                                userId={post.userId}
+                                key={posts.id}
+                                title={posts.title}
+                                body={posts.body}
+                                userId={posts.userId}
                             />
                         ))
                     }
@@ -43,4 +41,5 @@ function posts() {
     )
 }
 
-export default posts
+
+
