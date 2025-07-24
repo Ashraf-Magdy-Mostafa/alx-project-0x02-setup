@@ -15,3 +15,7 @@ export interface ButtonProps {
     disabled?: boolean;
     type?: "submit"
 }
+export interface Post {
+    title: string;
+    content: string
+}
