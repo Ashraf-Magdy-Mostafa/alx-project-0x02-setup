@@ -9,7 +9,7 @@ function Header() {
 
     const linksArray: NavLink[] = [
         { name: 'Home', href: '/home' },
-        { name: 'Properties', href: '/properties' },
+        { name: 'Posts', href: '/posts' },
         { name: 'About', href: '/about' },
         { name: 'Contact us', href: '/contact' },
     ];

@@ -4,6 +4,7 @@ import PostModal from "@/components/common/PostModal";
 import Button from "@/components/common/Button";
 import { useState } from "react";
 import { Post } from "@/interfaces";
+import Header from "@/components/layout/Header";
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [posts, setPosts] = useState<Post[]>([]);
@@ -19,6 +20,7 @@ function Home() {
       <Head>
         <title>Home | MyApp</title>
       </Head>
+      <Header />
       <section className="max-w-5xl mx-auto flex justify-end mt-4 p-6">
         <Button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 cursor-pointer self-center"
