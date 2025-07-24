@@ -11,7 +11,7 @@ function Header() {
         { name: 'Home', href: '/home' },
         { name: 'Posts', href: '/posts' },
         { name: 'About', href: '/about' },
-        { name: 'Contact us', href: '/contact' },
+        { name: 'Users', href: '/users' },
     ];
 
 
