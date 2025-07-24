@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { Post } from "@/interfaces"
+import { PostProps } from "@/interfaces"
 
-function PostModal({ isOpen, onSubmit }: { isOpen: boolean, onSubmit: (post: Post) => void }) {
+function PostModal({ isOpen, onSubmit }: { isOpen: boolean, onSubmit: (post: PostProps) => void }) {
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     if (!isOpen) return null;

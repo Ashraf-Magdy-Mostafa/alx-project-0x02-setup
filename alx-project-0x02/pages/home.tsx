@@ -3,12 +3,12 @@ import Head from "next/head"
 import PostModal from "@/components/common/PostModal";
 import Button from "@/components/common/Button";
 import { useState } from "react";
-import { Post } from "@/interfaces";
+import { PostProps } from "@/interfaces";
 import Header from "@/components/layout/Header";
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [posts, setPosts] = useState<Post[]>([]);
-  const submitHandler = (newPost: Post) => {
+  const [posts, setPosts] = useState<PostProps[]>([]);
+  const submitHandler = (newPost: PostProps) => {
     setPosts((prev) => [...prev, newPost]);
     console.log("New Post:", newPost);
     setIsModalOpen(false);
