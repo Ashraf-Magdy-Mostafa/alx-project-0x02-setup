@@ -13,7 +13,9 @@ export interface ButtonProps {
     // children: React.ReactNode;
     onClick?: () => void;
     disabled?: boolean;
-    type?: "submit"
+    type?: "submit";
+    shape?: "rounded-sm" | "rounded-md" | "rounded-lg" | "rounded-full";
+    size?: "small" | "medium" | "large";
 }
 export interface Post {
     title: string;
