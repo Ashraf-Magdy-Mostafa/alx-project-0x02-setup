@@ -1,4 +1,4 @@
-import { type GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import UserCard from '@/components/common/UserCard';
 import { type UserProps } from '@/interfaces';
