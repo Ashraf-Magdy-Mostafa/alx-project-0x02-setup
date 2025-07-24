@@ -7,3 +7,11 @@ export interface CardProps {
     description?: string;
     content: string;
 }
+export interface ButtonProps {
+    text: string
+    className?: string;
+    // children: React.ReactNode;
+    onClick?: () => void;
+    disabled?: boolean;
+    type?: "submit"
+}
